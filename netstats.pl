@@ -142,7 +142,6 @@ Here a brief description of status meanings:
    UNKNOWN
           The state of the socket is unknown.
 
-You can get further information by calling "perldoc netstats.pl".
 
 =pod OSNAMES
 
@@ -238,4 +237,7 @@ Here a brief description of status meanings:
           sent.
    UNKNOWN
           The state of the socket is unknown.
+
+You can get further information by calling "perldoc netstats.pl".
+
 
