@@ -45,23 +45,23 @@ if (grep {$_ =~ /-a|--auto/ } @ARGV){
 }
 
 unless ( GetOptions (
-                        "ESTABLISHED|E" => \$statuses{ESTABLISHED},
-                        "SYN_SENT|SS" => \$statuses{SYN_SENT},
-                        "SYN_RECV|SR" => \$statuses{SYN_RECV},
-                        "FIN_WAIT1|F1" => \$statuses{FIN_WAIT1},
-                        "FIN_WAIT2|F2" => \$statuses{FIN_WAIT2},
-                        "TIME_WAIT|TW" => \$statuses{TIME_WAIT},
-                        "CLOSE|C" => \$statuses{CLOSE},
-                        "CLOSE_WAIT|CW" => \$statuses{CLOSE_WAIT},
-                        "LAST_ACK|LA" => \$statuses{LAST_ACK},
-                        "LISTEN|L" => \$statuses{$listen},
-                        "CLOSING|CG" => \$statuses{CLOSING},
-                        "UNKNOWN|U" => \$statuses{UNKNOWN},
-                        "auto|a=i" => \$auto,
-                        "help" => \&help,
-                        )) {
-                            help();
-                        }
+        "ESTABLISHED|E" => \$statuses{ESTABLISHED},
+        "SYN_SENT|SS" => \$statuses{SYN_SENT},
+        "SYN_RECV|SR" => \$statuses{SYN_RECV},
+        "FIN_WAIT1|F1" => \$statuses{FIN_WAIT1},
+        "FIN_WAIT2|F2" => \$statuses{FIN_WAIT2},
+        "TIME_WAIT|TW" => \$statuses{TIME_WAIT},
+        "CLOSE|C" => \$statuses{CLOSE},
+        "CLOSE_WAIT|CW" => \$statuses{CLOSE_WAIT},
+        "LAST_ACK|LA" => \$statuses{LAST_ACK},
+        "LISTEN|L" => \$statuses{$listen},
+        "CLOSING|CG" => \$statuses{CLOSING},
+        "UNKNOWN|U" => \$statuses{UNKNOWN},
+        "auto|a=i" => \$auto,
+        "help" => \&help,
+        )) {
+            help();
+    }
 
 if ($auto){
 
@@ -121,19 +121,21 @@ If no options are given all statuses will be printed.
 
 You can use the following option abbreviations:
 
--E  for --ESTABLISHED
--SS for --SYN_SENT
--SR for --SYN_RECV
--F1 for --FIN_WAIT1 
--F2 for --FIN_WAIT2 
--TW for --Time_WAIT
--C  for --CLOSE
--CW for --CLOSE_WAIT
--LA for --LAST_ACK
--L  for --LISTEN
--CG for --CLOSING
--U  for --UNKNOWN
--h  for --help
+    -e  for --ESTABLISHED
+    -ss for --SYN_SENT
+    -sr for --SYN_RECV
+    -f1 for --FIN_WAIT1 
+    -f2 for --FIN_WAIT2 
+    -tw for --Time_WAIT
+    -c  for --CLOSE
+    -cw for --CLOSE_WAIT
+    -la for --LAST_ACK
+    -l  for --LISTEN
+    -cg for --CLOSING
+    -u  for --UNKNOWN
+
+    -a  for --auto
+    -h  for --help
 
 The special -a or --auto parameter takes an integer. This will
 cause the program to refresh the screen and output every integer seconds.
@@ -212,18 +214,18 @@ If no options are given all statuses will be printed.
 
 You can use the following option abbreviations:
 
-    -E  for --ESTABLISHED
-    -SS for --SYN_SENT
-    -SR for --SYN_RECV
-    -F1 for --FIN_WAIT1 
-    -F2 for --FIN_WAIT2 
-    -TW for --Time_WAIT
-    -C  for --CLOSE
-    -CW for --CLOSE_WAIT
-    -LA for --LAST_ACK
-    -L  for --LISTEN
-    -CG for --CLOSING
-    -U  for --UNKNOWN
+    -e  for --ESTABLISHED
+    -ss for --SYN_SENT
+    -sr for --SYN_RECV
+    -f1 for --FIN_WAIT1 
+    -f2 for --FIN_WAIT2 
+    -tw for --Time_WAIT
+    -c  for --CLOSE
+    -cw for --CLOSE_WAIT
+    -la for --LAST_ACK
+    -l  for --LISTEN
+    -cg for --CLOSING
+    -u  for --UNKNOWN
 
     -a  for --auto
     -h  for --help
