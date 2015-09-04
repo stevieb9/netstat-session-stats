@@ -155,6 +155,10 @@ Networking
 UNIX/System_administration
 Win32/Utilities
 
+=pod PREREQUISITES
+
+Getopt::Long
+
 =head1 AUTHOR
 
 Steve Bertrand, C<< <steveb at cpan.org> >>
