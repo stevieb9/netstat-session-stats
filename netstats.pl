@@ -6,7 +6,7 @@ use Getopt::Long;
 
 # netstats.pl
 
-my $VERSION = 0.02;
+my $VERSION = 0.03;
 
 # originally posted at http://www.perlmonks.org/?node_id=1140950
 
