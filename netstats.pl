@@ -6,24 +6,26 @@ use Getopt::Long;
 
 # netstats.pl
 
-my $VERSION = 0.03;
+my $VERSION = 0.04;
 
 # originally posted at http://www.perlmonks.org/?node_id=1140950
 
 # thanks to Discipulus from over at PerlMonks who
-# added the Usage output, added the remaining statuses
+# added the original usage output, added the remaining statuses
 # and added the Getopt::Long functionality
 
 my $platform = $^O;
 
-my %statuses = map { $_=> undef } qw( ESTABLISHED  SYN_SENT SYN_RECV FIN_WAIT1
-                                  FIN_WAIT2 TIME_WAIT CLOSE CLOSE_WAIT
-                                  LAST_ACK LISTEN CLOSING UNKNOWN
-                              );
+my @wanted = qw( ESTABLISHED SYN_SENT SYN_RECV FIN_WAIT1
+                 FIN_WAIT2 TIME_WAIT CLOSE CLOSE_WAIT
+                 LAST_ACK LISTEN CLOSING UNKNOWN
+               );
+
+my %statuses = map { $_=> undef } @wanted;
+
+# platform specific status munging...
 
 my $listen;
-
-# windows specific
 
 if ($platform eq 'MSWin32'){
     $listen = 'LISTENING';
@@ -63,9 +65,11 @@ unless ( GetOptions (
 
 if ($auto){
     while (1){
+
         my $clear = $platform eq 'MSWin32' 
           ? 'cls' 
           : 'clear';
+
         system($clear);
         netstat();
         sleep($auto);
@@ -168,6 +172,7 @@ Here a brief description of status meanings:
 You can get further information by calling "perldoc netstats.pl".
 
 EOF
+    exit 1;
 }
 sub _vim_placeholder {}
 __END__
