@@ -6,7 +6,7 @@ use Getopt::Long;
 
 # netstats.pl
 
-my $VERSION = 0.04;
+my $VERSION = 0.05;
 
 # originally posted at http://www.perlmonks.org/?node_id=1140950
 
@@ -189,8 +189,10 @@ Display C<netstat> socket status information on Win/*nix platforms.
 
 =head1 README
 
-This script displays the C<netstat> socket status counts on Windows and Unix
-platforms.
+This script displays any or all of the 'netstat' socket status counts 
+on Windows and Unix platforms, once, or in a continuous loop.
+
+=head1 SYNOPSIS
 
     # prints all statuses once, and exits
 
