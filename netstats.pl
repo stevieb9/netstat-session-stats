@@ -4,6 +4,8 @@ use warnings;
 
 use Getopt::Long;
 
+# netstats.pl
+
 my $VERSION = 0.02;
 
 # originally posted at http://www.perlmonks.org/?node_id=1140950
@@ -68,7 +70,6 @@ sub help {
 }
 
 __END__
-
 
 =head1 NAME
 
