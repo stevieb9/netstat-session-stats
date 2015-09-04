@@ -64,12 +64,12 @@ unless ( GetOptions (
                         }
 
 if ($auto){
+
+    my $clear = $platform eq 'MSWin32' 
+      ? 'cls' 
+      : 'clear';
+
     while (1){
-
-        my $clear = $platform eq 'MSWin32' 
-          ? 'cls' 
-          : 'clear';
-
         system($clear);
         netstat();
         sleep($auto);
