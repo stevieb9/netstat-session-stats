@@ -19,8 +19,9 @@ my $platform = $^O;
 my %statuses = map { $_=> undef } qw( ESTABLISHED  SYN_SENT SYN_RECV FIN_WAIT1
                                   FIN_WAIT2 TIME_WAIT CLOSE CLOSE_WAIT
                                   LAST_ACK LISTEN CLOSING UNKNOWN );
-my $auto = 0;
 my $given_args = scalar @ARGV;
+
+my $auto = 0;
 
 if (grep {$_ =~ /-a|--auto/ } @ARGV){
     $given_args -= 2;
