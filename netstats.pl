@@ -284,15 +284,15 @@ Steve Bertrand, C<< <steveb at cpan.org> >>
 
 =head1 THANKS TO
 
-Discipulus from over at PerlMonks for adding the usage/help output,
+Discipulus from over at PerlMonks for adding the original usage/help output,
 added the C<Getopt::Long> functionality, and added the remaining
 statuses that weren't included in the original posting of the script.
 
 =head1 SUPPORT
 
-You can find documentation for this module with the perldoc command.
+You can find documentation for this script with the perldoc command.
 
-    perldoc Devel::Examine::Subs
+    perldoc ./netstat.pl
 
 =head1 LICENSE AND COPYRIGHT
 
