@@ -18,7 +18,22 @@ my $platform = $^O;
 
 my %statuses = map { $_=> undef } qw( ESTABLISHED  SYN_SENT SYN_RECV FIN_WAIT1
                                   FIN_WAIT2 TIME_WAIT CLOSE CLOSE_WAIT
-                                  LAST_ACK LISTEN CLOSING UNKNOWN );
+                                  LAST_ACK LISTEN CLOSING UNKNOWN
+                              );
+
+my $listen;
+
+# windows specific
+
+if ($platform eq 'MSWin32'){
+    $listen = 'LISTENING';
+    delete $statuses{LISTEN};
+    $statuses{$listen} = undef;
+}
+else {
+    $listen = 'LISTEN';
+}
+
 my $given_args = scalar @ARGV;
 
 my $auto = 0;
@@ -37,7 +52,7 @@ unless ( GetOptions (
                         "CLOSE|C" => \$statuses{CLOSE},
                         "CLOSE_WAIT|CW" => \$statuses{CLOSE_WAIT},
                         "LAST_ACK|LA" => \$statuses{LAST_ACK},
-                        "LISTEN|L" => \$statuses{LISTEN},
+                        "LISTEN|L" => \$statuses{$listen},
                         "CLOSING|CG" => \$statuses{CLOSING},
                         "UNKNOWN|U" => \$statuses{UNKNOWN},
                         "auto|a=i" => \$auto,
